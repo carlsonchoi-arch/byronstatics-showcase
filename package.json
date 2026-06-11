@@ -1,0 +1,12 @@
+{
+  "name": "byronstatics-showcase",
+  "version": "1.0.0",
+  "description": "ByronStatics retro audio product showcase site — byron-statics.com",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
+  },
+  "author": "ByronStatics",
+  "license": "UNLICENSED"
+}

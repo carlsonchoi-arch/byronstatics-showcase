@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Our Story — ByronStatics</title>
+ <meta name="description" content="ByronStatics celebrates the sonic heritage of iconic retro audio players — boomboxes, cassette recorders, portable radios, CD players.">
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='00100100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B6%3C/text%3E%3C/svg%3E">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ cream: { DEFAULT: '#FBF3E4', warm: '#F5E6CC', deep: '#EDD9B0' },
+ teal: { DEFAULT: '#2A9D8F', deep: '#1B6B61', light: '#7BC4BB', dark: '#0D4A42' },
+ burnt: { DEFAULT: '#E76F51', deep: '#C44A2C' },
+ mustard: { DEFAULT: '#E9C46A', deep: '#C9A33A' },
+ plum: { DEFAULT: '#7B2D8E' },
+ rust: { DEFAULT: '#B5482D' },
+ ink: { DEFAULT: '#264653', soft: '#3A5868' },
+ },
+ fontFamily: {
+ script: ['Allura', 'Pacifico', 'Caveat Brush', 'cursive'],
+ display: ['"Bagel Fat One"', 'Fredoka', '"Cooper Black"', 'Georgia', 'serif'],
+ body: ['"DM Sans"', 'Helvetica', 'sans-serif'],
+ retro: ['"Bungee"', 'Fredoka', 'sans-serif'],
+ serif: ['"DM Serif Display"', 'serif'],
+ },
+ }
+ }
+ }
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bagel+Fat+One&family=Bungee&family=Caveat+Brush&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+ <style>
+ body { font-family: 'DM Sans', sans-serif; color: #264653; background: #FBF3E4; }
+ .font-display { font-family: 'Bagel Fat One', 'Fredoka', 'Cooper Black', Georgia, serif; letter-spacing: -0.01em; }
+ .font-retro { font-family: 'Bungee', 'Fredoka', sans-serif; letter-spacing:0.02em; }
+ .font-script { font-family: 'Caveat Brush', cursive; }
+ .font-serif-display { font-family: 'DM Serif Display', serif; }
+ .paper-cream {
+ background-color: #FBF3E4;
+ background-image:
+ radial-gradient(circle at20%30%, rgba(42,157,143,0.05)0%, transparent40%),
+ radial-gradient(circle at80%70%, rgba(231,111,81,0.04)0%, transparent40%);
+ }
+ .bg-teal-block {
+ background:
+ radial-gradient(circle at20%20%, rgba(123,196,187,0.25)0%, transparent50%),
+ linear-gradient(135deg, #1B6B610%, #0D4A42100%);
+ }
+ .wave-pattern {
+ background-image:
+ repeating-linear-gradient(45deg,
+ rgba(42,157,143,0.1)0px,
+ rgba(42,157,143,0.1)8px,
+ transparent8px,
+ transparent18px);
+ }
+ .btn-burnt {
+ background: #E76F51;
+ color: #FBF3E4;
+ border:3px solid #C44A2C;
+ box-shadow:6px6px0 #C44A2C;
+ transition: all0.15s ease;
+ }
+ .btn-burnt:hover { transform: translate(2px,2px); box-shadow:4px4px0 #C44A2C; }
+ .btn-teal {
+ background: #2A9D8F;
+ color: #FBF3E4;
+ border:3px solid #1B6B61;
+ box-shadow:6px6px0 #1B6B61;
+ transition: all0.15s ease;
+ }
+ .btn-teal:hover { transform: translate(2px,2px); box-shadow:4px4px0 #1B6B61; }
+ .blob-1 { border-radius:60%40%50%50% /50%60%40%50%; }
+ .blob-2 { border-radius:40%60%60%40% /60%50%50%40%; }
+ @keyframes scroll-left {
+0% { transform: translateX(0%); }
+100% { transform: translateX(-50%); }
+ }
+ .ticker-track { animation: scroll-left28s linear infinite; }
+ .ticker-track:hover { animation-play-state: paused; }
+ </style>
+</head>
+<body class="paper-cream text-ink">
+
+ <!-- Top Marquee Ticker -->
+ <div class="bg-teal-block text-cream py-3 overflow-hidden border-b-4 border-burnt">
+ <div class="ticker-track flex gap-12 whitespace-nowrap font-retro text-sm tracking-widest">
+ <span>★ FAR OUT SOUND ★</span>
+ <span>✺ TOTALLY TUBULAR ★</span>
+ <span>☼ GROOVY GROOVES ☼</span>
+ <span>★ STAY GOLDEN ★</span>
+ <span>✺ SHOP NOW AT WALMART ✺</span>
+ <span>☼ BOOMBOX REVIVAL ☼</span>
+ <span>★ FAR OUT SOUND ★</span>
+ <span>✺ TOTALLY TUBULAR ★</span>
+ <span>☼ GROOVY GROOVES ☼</span>
+ <span>★ STAY GOLDEN ★</span>
+ <span>✺ SHOP NOW AT WALMART ✺</span>
+ <span>☼ BOOMBOX REVIVAL ☼</span>
+ </div>
+ </div>
+
+ <!-- Header (teal bar — cream script logo per device wordmark) -->
+ <header class="bg-teal-deep sticky top-0 z-50 border-b-4 border-burnt">
+ <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+ <a href="index.html" class="inline-flex items-center leading-none group" title="ByronStatics">
+ <span class="text-5xl md:text-6xl inline-block" style="font-family: 'Allura', 'Pacifico', 'Caveat Brush', cursive; color: #FBF3E4; transform: rotate(-12deg); text-shadow:1px2px3px rgba(0,0,0,0.45),0012px rgba(251,243,228,0.2); padding:00.5rem;">
+ ByronStatics
+ </span>
+ </a>
+ <nav class="hidden md:flex items-center gap-8 text-base font-bold tracking-wide text-cream/95">
+ <a href="index.html" class="hover:text-mustard transition">Home</a>
+ <a href="index.html#products" class="hover:text-mustard transition">Collection</a>
+ <a href="about.html" class="text-mustard underline decoration-wavy decoration-2 underline-offset-4">The Story</a>
+ <a href="contact.html" class="hover:text-mustard transition">Say Hi</a>
+ </nav>
+ <a href="https://www.walmart.com" target="_blank" rel="noopener" class="btn-burnt font-retro text-sm tracking-wider px-6 py-3 rounded-full">
+ SHOP ON WALMART ★
+ </a>
+ </div>
+ </header>
+
+ <!-- Hero: "Our Story" -->
+ <section class="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28">
+ <div class="absolute -top-20 -right-32 w-[700px] h-[700px] opacity-20 pointer-events-none" style="background: repeating-conic-gradient(from0deg at50%50%, #E9C46A0deg6deg, transparent6deg18deg); border-radius:50%;"></div>
+ <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+ <p class="font-retro text-sm text-burnt mb-4 tracking-widest">✺ EST.2026 ✺ CALIFORNIA VIBES ✺</p>
+ <h1 class="font-display text-6xl md:text-8xl text-teal leading-[0.95] mb-8">
+ Our<br>
+ <span class="text-burnt">Story.</span>
+ </h1>
+ <p class="font-serif-display text-xl md:text-2xl italic text-ink-soft max-w-2xl mx-auto leading-snug">
+ Celebrating the <em class="text-teal">sonic heritage</em> of iconic audio players — keeping the warmth alive in a world of cold digital playback.
+ </p>
+ </div>
+ </section>
+
+ <!-- Wave divider -->
+ <div class="bg-cream-warm py-6 wave-pattern"></div>
+
+ <!-- Brand Story Body -->
+ <section class="py-16 md:py-20 paper-cream">
+ <div class="max-w-3xl mx-auto px-6 space-y-10">
+ <p class="text-3xl font-serif-display italic text-teal leading-snug">
+ Byron Statics believes in enjoying unique and retro audio experiences through the archetypal players of the years.
+ </p>
+
+ <p class="text-lg text-ink leading-relaxed">
+ In a world saturated with cold, sterile digital playback, we celebrate the distinctive sounds and undeniable style of iconic audio formats. From the <em class="text-burnt font-semibold">warm crackle of a cassette tape</em> to the unmistakable mechanical precision of a top-loading CD player, our collection brings back the rich character that defined generations of music listening.
+ </p>
+
+ <p class="text-lg text-ink leading-relaxed">
+ Each product in our lineup — from our portable boomboxes to our vintage-style radios — is designed with both <em class="text-burnt font-semibold">authentic retro aesthetics</em> and modern versatility. We believe that high-quality audio and timeless design are not mutually exclusive; they enhance each other.
+ </p>
+
+ <p class="text-lg text-ink leading-relaxed">
+ Whether you're studying, hosting a family gathering, enjoying personal leisure time, or taking music outdoors, our players are built to be your companion. Portable, dependable, and unmistakably retro.
+ </p>
+
+ <!-- Decorative ornament -->
+ <div class="flex items-center justify-center gap-4 py-8">
+ <div class="h-px w-24 bg-teal/40"></div>
+ <svg class="w-6 h-6 text-burnt" viewBox="002424" fill="currentColor">
+ <path d="M122 L13.59 L2110.5 L13.512 L1219 L10.512 L310.5 L10.59 Z"/>
+ </svg>
+ <div class="h-px w-24 bg-teal/40"></div>
+ </div>
+
+ <!-- Promise pull-quote -->
+ <div class="relative bg-cream-dark rounded-3xl p-10 border-4 border-teal/30 shadow-lg">
+ <div class="absolute -top-4 left-8 text-7xl text-burnt font-serif-display leading-none">"</div>
+ <p class="font-serif-display text-3xl md:text-4xl italic text-teal text-center leading-snug pt-6">
+ There's no better way to appreciate the timeless beauty of music.
+ </p>
+ <p class="text-center font-retro text-xs text-burnt mt-6 tracking-widest">— OUR PROMISE</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- Big teal CTA block -->
+ <section class="bg-teal-block text-cream py-20 md:py-28">
+ <div class="max-w-4xl mx-auto px-6 text-center">
+ <p class="font-retro text-sm text-mustard tracking-widest mb-6">☼ THE CREW ☼</p>
+ <p class="font-serif-display text-3xl md:text-4xl italic leading-snug mb-8 font-semibold" style="color: #FBF3E4; text-shadow:1px1px2px rgba(0,0,0,0.4);">
+ "We don't just sell players — we keep the <span class="text-mustard">sonic heritage</span> alive, one totally tubular tune at a time."
+ </p>
+ <p class="font-retro text-sm tracking-widest text-mustard">— THE BYRONSTATICS CREW</p>
+ </div>
+ </section>
+
+ <!-- "Stay Golden" CTA banner -->
+ <section class="py-16 md:py-20 bg-burnt paper-cream">
+ <div class="max-w-4xl mx-auto px-6 text-center">
+ <h2 class="font-display text-5xl md:text-7xl text-cream mb-6">
+ Stay Golden.
+ </h2>
+ <p class="text-xl text-cream/90 mb-8 max-w-xl mx-auto">
+30-day returns.1-year warranty — totally tubular.
+ </p>
+ <a href="https://www.walmart.com" target="_blank" rel="noopener" class="inline-block bg-cream text-burnt font-retro text-base tracking-wider px-10 py-4 rounded-full border-4 border-cream-warm shadow-lg hover:scale-105 transition">
+ SHOP ON WALMART ★
+ </a>
+ </div>
+ </section>
+
+ <!-- Footer -->
+ <footer class="bg-teal-dark text-cream py-14">
+ <div class="max-w-6xl mx-auto px-6">
+
+ <!-- Big script logo per brand spec (matches device wordmark) -->
+ <div class="text-center mb-10">
+ <span class="text-7xl md:text-8xl inline-block" style="font-family: 'Allura', 'Pacifico', 'Caveat Brush', cursive; color: #FBF3E4; transform: rotate(-8deg); text-shadow:2px3px4px rgba(0,0,0,0.45);">
+ ByronStatics
+ </span>
+ <p class="font-retro text-[10px] tracking-[0.4em] text-mustard mt-6">A VAUGHN MARKETING INC. BRAND</p>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 border-t-2 border-cream/20 pt-10">
+ <div>
+ <h4 class="font-retro text-sm text-mustard mb-3">✺ ABOUT</h4>
+ <p class="italic leading-relaxed">Far out audio from the70s &amp;80s, remixed for today.</p>
+ </div>
+ <div>
+ <h4 class="font-retro text-sm text-mustard mb-3">☼ QUICK LINKS</h4>
+ <ul class="space-y-2">
+ <li><a href="index.html" class="hover:text-mustard transition">Home</a></li>
+ <li><a href="index.html#products" class="hover:text-mustard transition">The Collection</a></li>
+ <li><a href="about.html" class="hover:text-mustard transition">Our Story</a></li>
+ <li><a href="contact.html" class="hover:text-mustard transition">Say Hi</a></li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-retro text-sm text-mustard mb-3">★ SAY HI</h4>
+ <ul class="space-y-2 italic">
+ <li>hello@byron-statics.com</li>
+ <li>byron-statics.com</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="border-t-2 border-cream/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-retro tracking-widest text-cream/60">
+ <p>©2026 BYRONSTATICS · ALL RIGHTS RESERVED</p>
+ <p>★ STAY GROOVY ★</p>
+ </div>
+ </div>
+ </footer>
+
+</body>
+</html>

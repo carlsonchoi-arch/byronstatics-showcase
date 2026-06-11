@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByronStatics — Far Out Audio</title>
+  <meta name="description" content="Groovy retro audio from the 70s & 80s. Boomboxes, cassette players, portable radios, CD players. Totally tubular sound.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B6%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:     { DEFAULT: '#FBF3E4', warm: '#F5E6CC', deep: '#EDD9B0' },
+            teal:      { DEFAULT: '#2A9D8F', deep: '#1B6B61', light: '#7BC4BB', dark: '#0D4A42' },
+            burnt:     { DEFAULT: '#E76F51', deep: '#C44A2C' },
+            mustard:   { DEFAULT: '#E9C46A', deep: '#C9A33A' },
+            plum:      { DEFAULT: '#7B2D8E' },
+            rust:      { DEFAULT: '#B5482D' },
+            ink:       { DEFAULT: '#264653', soft: '#3A5868' },
+          },
+          fontFamily: {
+            script:  ['Caveat Brush', 'cursive'],
+            display: ['"Bagel Fat One"', '"Cooper Black"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Helvetica', 'sans-serif'],
+            retro:   ['"Bungee"', '"Cooper Black"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bagel+Fat+One&family=Bungee&family=Caveat+Brush&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; color: #264653; background: #FBF3E4; }
+
+    /* Big chunky retro display */
+    .font-display { font-family: 'Bagel Fat One', 'Fredoka', 'Cooper Black', Georgia, serif; letter-spacing: -0.01em; }
+    .font-retro { font-family: 'Bungee', 'Fredoka', sans-serif; letter-spacing: 0.02em; }
+    .font-script { font-family: 'Caveat Brush', cursive; }
+    .font-serif-display { font-family: 'DM Serif Display', serif; }
+
+    /* Cream paper texture */
+    .paper-cream {
+      background-color: #FBF3E4;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(42, 157, 143, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(231, 111, 81, 0.04) 0%, transparent 40%);
+    }
+
+    /* Teal block */
+    .bg-teal-block {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(123, 196, 187, 0.25) 0%, transparent 50%),
+        linear-gradient(135deg, #1B6B61 0%, #0D4A42 100%);
+    }
+
+    /* Sunburst rays (decorative SVG) */
+    .sunburst {
+      background-image:
+        repeating-conic-gradient(from 0deg at 50% 50%,
+          rgba(251, 243, 228, 0.08) 0deg 8deg,
+          transparent 8deg 16deg);
+    }
+
+    /* Wavy stripe pattern */
+    .wave-pattern {
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(42, 157, 143, 0.1) 0px,
+          rgba(42, 157, 143, 0.1) 8px,
+          transparent 8px,
+          transparent 18px);
+    }
+
+    /* Big chunky teal button */
+    .btn-teal {
+      background: #2A9D8F;
+      color: #FBF3E4;
+      border: 3px solid #1B6B61;
+      box-shadow: 6px 6px 0 #1B6B61;
+      transition: all 0.15s ease;
+    }
+    .btn-teal:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0 #1B6B61;
+    }
+    .btn-teal:active {
+      transform: translate(6px, 6px);
+      box-shadow: 0 0 0 #1B6B61;
+    }
+
+    /* Burnt orange variant */
+    .btn-burnt {
+      background: #E76F51;
+      color: #FBF3E4;
+      border: 3px solid #C44A2C;
+      box-shadow: 6px 6px 0 #C44A2C;
+      transition: all 0.15s ease;
+    }
+    .btn-burnt:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0 #C44A2C;
+    }
+
+    /* Arch shape (70s signature) */
+    .arch {
+      border-top-left-radius: 50% 60%;
+      border-top-right-radius: 50% 60%;
+    }
+
+    /* Soft blob shape */
+    .blob-1 {
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    }
+    .blob-2 {
+      border-radius: 40% 60% 60% 40% / 60% 50% 50% 40%;
+    }
+
+    /* Cream product card with teal trim */
+    .product-card {
+      background: #FBF3E4;
+      border: 3px solid #2A9D8F;
+      border-radius: 1.25rem;
+      box-shadow: 8px 8px 0 rgba(42, 157, 143, 0.25);
+      transition: all 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 12px 12px 0 rgba(42, 157, 143, 0.35);
+    }
+    .product-image { transition: transform 0.5s ease; }
+    .product-card:hover .product-image { transform: scale(1.05) rotate(-2deg); }
+
+    /* Marquee ticker */
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      animation: scroll-left 28s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+
+    /* Minimalist product index nav (replaces chunky dial buttons for classier look) */
+    .index-link {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .index-link .num {
+      font-family: 'Bungee', sans-serif;
+      font-size: 0.7rem;
+      color: #E76F51;
+      letter-spacing: 0.1em;
+    }
+    .index-link .code {
+      font-family: 'Bagel Fat One', 'Fredoka', Georgia, serif;
+      font-size: 1.5rem;
+      color: #2A9D8F;
+      letter-spacing: 0.02em;
+    }
+    .index-link .cat {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      color: #3A5868;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .index-link:hover {
+      border-bottom-color: #2A9D8F;
+    }
+    .index-link:hover .code {
+      color: #1B6B61;
+    }
+
+    /* Decorative star (70s sparkle) */
+    .star-70s {
+      color: #E76F51;
+      font-size: 1.5rem;
+      display: inline-block;
+      animation: spin 8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Sun-shape (svg) */
+    .sun-icon {
+      color: #E9C46A;
+    }
+  </style>
+</head>
+<body class="paper-cream text-ink">
+
+  <!-- Top Marquee Ticker -->
+  <div class="bg-teal-block text-cream py-3 overflow-hidden border-b-4 border-burnt">
+    <div class="ticker-track flex gap-12 whitespace-nowrap font-retro text-sm tracking-widest">
+      <span>★ FAR OUT SOUND ★</span>
+      <span>✺ TOTALLY TUBULAR ★</span>
+      <span>☼ GROOVY GROOVES ☼</span>
+      <span>★ STAY GOLDEN ★</span>
+      <span>✺ SHOP NOW AT WALMART ✺</span>
+      <span>☼ BOOMBOX REVIVAL ☼</span>
+      <span>★ FAR OUT SOUND ★</span>
+      <span>✺ TOTALLY TUBULAR ★</span>
+      <span>☼ GROOVY GROOVES ☼</span>
+      <span>★ STAY GOLDEN ★</span>
+      <span>✺ SHOP NOW AT WALMART ✺</span>
+      <span>☼ BOOMBOX REVIVAL ☼</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <!-- Header (teal bar — cream script logo per device wordmark) -->
+ <header class="bg-teal-deep sticky top-0 z-50 border-b-4 border-burnt">
+ <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+ <a href="index.html" class="inline-flex items-center leading-none group" title="ByronStatics">
+ <span class="text-5xl md:text-6xl inline-block" style="font-family: 'Allura', 'Pacifico', 'Caveat Brush', cursive; color: #FBF3E4; transform: rotate(-12deg); text-shadow:1px2px3px rgba(0,0,0,0.45),0012px rgba(251,243,228,0.2); padding:00.5rem;">
+ ByronStatics
+ </span>
+ </a>
+ <nav class="hidden md:flex items-center gap-8 text-base font-bold tracking-wide text-cream/95">
+ <a href="index.html" class="text-mustard underline decoration-wavy decoration-2 underline-offset-4">Home</a>
+ <a href="#products" class="hover:text-mustard transition">Collection</a>
+ <a href="about.html" class="hover:text-mustard transition">The Story</a>
+ <a href="contact.html" class="hover:text-mustard transition">Say Hi</a>
+ </nav>
+ <a href="https://www.walmart.com" target="_blank" rel="noopener" class="btn-burnt font-retro text-sm tracking-wider px-6 py-3 rounded-full">
+ SHOP ON WALMART ★
+ </a>
+ </div>
+ </header>
+
+  <!-- Hero: Asymmetric, big type, blob shape behind image -->
+  <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32">
+    <!-- Sun rays in background (visible) -->
+    <div class="absolute -top-20 -right-32 w-[700px] h-[700px] opacity-20 pointer-events-none" style="background: repeating-conic-gradient(from 0deg at 50% 50%, #E9C46A 0deg 6deg, transparent 6deg 18deg); border-radius: 50%;"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full sunburst opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- LEFT: Big chunky text -->
+        <div>
+          <p class="font-retro text-sm text-burnt mb-4 tracking-widest">
+            ✺ EST. 2026 ✺ CALIFORNIA VIBES ✺
+          </p>
+          <h1 class="font-display text-6xl md:text-8xl text-teal leading-[0.95] mb-6">
+            FAR<br>
+            <span class="text-burnt">OUT</span><br>
+            SOUND.
+          </h1>
+          <p class="text-xl text-ink-soft leading-relaxed mb-8 max-w-md">
+            Five totally tubular players. Groovy beats, sunshine sound, and that <em class="font-serif-display italic text-teal">far out</em> 70s/80s energy.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 items-start">
+            <a href="https://www.walmart.com" target="_blank" rel="noopener" class="btn-teal font-retro text-sm tracking-wider px-8 py-4 rounded-full">
+              SHOP ON WALMART ☼
+            </a>
+            <a href="about.html" class="font-bold text-ink underline decoration-wavy decoration-burnt decoration-2 underline-offset-4 hover:text-burnt transition">
+              OUR STORY →
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Featured product with arch/blob background -->
+        <div class="relative">
+          <!-- Blob background -->
+          <div class="absolute inset-0 bg-teal blob-1 -z-10 transform rotate-6"></div>
+          <div class="absolute -top-6 -right-6 w-32 h-32 bg-mustard rounded-full -z-10"></div>
+          <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-burnt blob-2 -z-10"></div>
+
+          <div class="relative bg-cream-warm p-6 rounded-3xl border-4 border-teal shadow-2xl">
+ <img src="assets/images/kbb-228/kbb-228-front-hero.jpg"
+ alt="KBB-228 Spherical CD Boombox — front view, control panel + LCD"
+ class="w-full h-auto rounded-2xl">
+ <p class="text-center font-retro text-xs text-ink mt-4 tracking-widest">
+ ☼ FEATURED · KBB-228 ☼
+ </p>
+ </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="bg-cream-warm py-6 wave-pattern"></div>
+
+  <!-- Minimalist product index (replaces chunky dial buttons) -->
+  <section class="py-16 md:py-20 paper-cream border-y-2 border-teal/20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+        <a href="#kbb-228" class="index-link justify-between">
+          <span><span class="num">N° 01</span> <span class="code">KBB-228</span></span>
+          <span class="cat">Boombox</span>
+        </a>
+        <a href="#kcs-315" class="index-link justify-between">
+          <span><span class="num">N° 03</span> <span class="code">KCS-315</span></span>
+          <span class="cat">Cassette</span>
+        </a>
+        <a href="#kbb-250" class="index-link justify-between">
+          <span><span class="num">N° 02</span> <span class="code">KBB-250</span></span>
+          <span class="cat">Boombox</span>
+        </a>
+        <a href="#pcd-220" class="index-link justify-between">
+          <span><span class="num">N° 04</span> <span class="code">PCD-220</span></span>
+          <span class="cat">CD Player</span>
+        </a>
+        <a href="#am66" class="index-link justify-between md:col-span-2 md:max-w-md md:mx-auto">
+          <span><span class="num">N° 05</span> <span class="code">AM66</span></span>
+          <span class="cat">Radio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section: numbered with chunky 70s cards -->
+  <section id="products" class="py-16 md:py-24 bg-cream-warm">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="font-retro text-sm text-burnt tracking-widest mb-3">☼ THE COLLECTION ☼</p>
+        <h2 class="font-display text-5xl md:text-6xl text-teal mb-4">
+          Totally Tubular
+        </h2>
+        <p class="text-xl text-ink-soft italic max-w-2xl mx-auto">
+          Five iconic players from the golden era of sound.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- KBB-228 -->
+ <a href="products/kbb-228.html" id="kbb-228" class="product-card group block overflow-hidden">
+ <div class="aspect-square bg-cream overflow-hidden rounded-t-2xl">
+ <img src="assets/images/kbb-228/kbb-228-front-hero.jpg" alt="KBB-228 Spherical CD Boombox — front control panel view" class="product-image w-full h-full object-cover" loading="lazy">
+ </div>
+          <div class="p-6 bg-cream">
+            <p class="font-retro text-xs text-burnt mb-2">✺ NO. 1 · BOOMBOX</p>
+            <h3 class="font-display text-3xl text-teal mb-2">KBB-228</h3>
+            <p class="text-ink-soft mb-4 leading-snug">Round UFO-style CD boombox. Top-load, AM/FM, brass buttons.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-wider text-ink/70">CD · AM/FM</span>
+              <span class="font-retro text-sm text-burnt group-hover:translate-x-1 transition-transform">VIEW ★</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- KBB-250 -->
+        <a href="products/kbb-250.html" id="kbb-250" class="product-card group block overflow-hidden">
+          <div class="aspect-square bg-cream overflow-hidden rounded-t-2xl">
+            <img src="assets/images/kbb-250/kbb-250-front-hero-shot-powered-on.jpg" alt="KBB-250 Boombox" class="product-image w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6 bg-cream">
+            <p class="font-retro text-xs text-burnt mb-2">✺ NO. 2 · BOOMBOX</p>
+            <h3 class="font-display text-3xl text-teal mb-2">KBB-250</h3>
+            <p class="text-ink-soft mb-4 leading-snug">Top-load CD boombox. AM/FM stereo, dual 1W speakers, AC/DC.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-wider text-ink/70">CD · AM/FM</span>
+              <span class="font-retro text-sm text-burnt group-hover:translate-x-1 transition-transform">VIEW ★</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- KCS-315 -->
+        <a href="products/kcs-315.html" id="kcs-315" class="product-card group block overflow-hidden">
+          <div class="aspect-square bg-cream overflow-hidden rounded-t-2xl">
+            <img src="assets/images/kcs-315/kcs-315-front-hero-view.jpg" alt="KCS-315 Cassette Player" class="product-image w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6 bg-cream">
+            <p class="font-retro text-xs text-burnt mb-2">✺ NO. 3 · CASSETTE</p>
+            <h3 class="font-display text-3xl text-teal mb-2">KCS-315</h3>
+            <p class="text-ink-soft mb-4 leading-snug">Portable AM/FM cassette recorder with VAS & built-in mic. 3 colors.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-wider text-ink/70">CASSETTE · 3 COLORS</span>
+              <span class="font-retro text-sm text-burnt group-hover:translate-x-1 transition-transform">VIEW ★</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- PCD-220 -->
+ <a href="products/pcd-220.html" id="pcd-220" class="product-card group block overflow-hidden">
+ <div class="aspect-square bg-cream overflow-hidden rounded-t-2xl">
+ <img src="assets/images/pcd-220/pcd220-pink-closed-hero.jpg" alt="PCD-220 Portable CD Player" class="product-image w-full h-full object-cover">
+ </div>
+          <div class="p-6 bg-cream">
+            <p class="font-retro text-xs text-burnt mb-2">✺ NO. 4 · CD PLAYER</p>
+            <h3 class="font-display text-3xl text-teal mb-2">PCD-220</h3>
+            <p class="text-ink-soft mb-4 leading-snug">Discman-style with 60s anti-skip & 5 EQ. 3 colorways + earbuds.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-wider text-ink/70">CD · 60s ANTI-SKIP</span>
+              <span class="font-retro text-sm text-burnt group-hover:translate-x-1 transition-transform">VIEW ★</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- AM66 -->
+ <a href="products/am66.html" id="am66" class="product-card group block overflow-hidden">
+ <div class="aspect-square bg-cream overflow-hidden rounded-t-2xl">
+ <img src="assets/images/am66/am66-cream-front-3q-dial.jpg" alt="AM66 AM/FM Radio" class="product-image w-full h-full object-cover">
+ </div>
+          <div class="p-6 bg-cream">
+            <p class="font-retro text-xs text-burnt mb-2">✺ NO. 5 · RADIO</p>
+            <h3 class="font-display text-3xl text-teal mb-2">AM66</h3>
+            <p class="text-ink-soft mb-4 leading-snug">Vintage AM/FM radio with rotary dial, 4W output, USB-C. 2 colors.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs tracking-wider text-ink/70">AM/FM · ROTARY</span>
+              <span class="font-retro text-sm text-burnt group-hover:translate-x-1 transition-transform">VIEW ★</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Big teal block: pull-quote / philosophy -->
+  <section class="bg-teal-block text-cream py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <p class="font-retro text-sm text-mustard tracking-widest mb-6">☼ THE VIBE ☼</p>
+      <p class="font-serif-display text-3xl md:text-4xl italic leading-snug mb-8 font-semibold" style="color: #FBF3E4; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">
+        "Sound from the <span class="text-mustard">sunshine era</span> — when music was warm, speakers were big, and every song felt like a drive to the coast."
+      </p>
+      <p class="font-retro text-sm tracking-widest text-mustard">— THE BYRONSTATICS CREW</p>
+    </div>
+  </section>
+
+  <!-- Big "Stay Golden" CTA banner -->
+  <section class="py-16 md:py-20 bg-burnt paper-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-5xl md:text-7xl text-cream mb-6">
+        Stay Golden.
+      </h2>
+      <p class="text-xl text-cream/90 mb-8 max-w-xl mx-auto">
+        30-day returns. 1-year warranty — totally tubular.
+      </p>
+      <a href="https://www.walmart.com" target="_blank" rel="noopener" class="inline-block bg-cream text-burnt font-retro text-base tracking-wider px-10 py-4 rounded-full border-4 border-cream-warm shadow-lg hover:scale-105 transition">
+        SHOP ON WALMART ★
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-teal-dark text-cream py-14">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <!-- Big script logo per brand spec (matches device wordmark) -->
+ <div class="text-center mb-10">
+ <span class="text-7xl md:text-8xl inline-block" style="font-family: 'Allura', 'Pacifico', 'Caveat Brush', cursive; color: #FBF3E4; transform: rotate(-8deg); text-shadow:2px3px4px rgba(0,0,0,0.45);">
+ ByronStatics
+ </span>
+ <p class="font-retro text-[10px] tracking-[0.4em] text-mustard mt-6">A VAUGHN MARKETING INC. BRAND</p>
+ </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 border-t-2 border-cream/20 pt-10">
+        <div>
+          <h4 class="font-retro text-sm text-mustard mb-3">✺ ABOUT</h4>
+          <p class="italic leading-relaxed">Far out audio from the 70s & 80s, remixed for today.</p>
+        </div>
+        <div>
+          <h4 class="font-retro text-sm text-mustard mb-3">☼ QUICK LINKS</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-mustard transition">Home</a></li>
+            <li><a href="#products" class="hover:text-mustard transition">The Collection</a></li>
+            <li><a href="about.html" class="hover:text-mustard transition">Our Story</a></li>
+            <li><a href="contact.html" class="hover:text-mustard transition">Say Hi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-retro text-sm text-mustard mb-3">★ SAY HI</h4>
+          <ul class="space-y-2 italic">
+            <li>hello@byron-statics.com</li>
+            <li>byron-statics.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t-2 border-cream/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-retro tracking-widest text-cream/60">
+        <p>© 2026 BYRONSTATICS · ALL RIGHTS RESERVED</p>
+        <p>★ STAY GROOVY ★</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
