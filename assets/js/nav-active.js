@@ -1,7 +1,6 @@
 // ByronStatics nav — exclusive active state for Home vs Collection
-// Only ONE of Home/Collection can be active at a time:
-//   - On home page (no hash): Home is active
-//   - After clicking Collection (hash = #products): Collection is active, Home goes inactive
+// Only ONE of Home/Collection can be active at a time. Importantly,
+// the logo link is EXCLUDED — only nav links are mutated.
 
 (function () {
   'use strict';
@@ -19,64 +18,76 @@
   `;
   document.head.appendChild(style);
 
+  // Active class string for the Home nav link
+  const ACTIVE_CLASSES = ['text-mustard', 'underline', 'decoration-wavy', 'decoration-2', 'underline-offset-4'];
+  // Inactive class string (default state)
+  const INACTIVE_CLASSES = ['hover:text-mustard', 'transition'];
+
+  // Get ONLY the nav Home link, not the logo or footer links
+  function getNavHomeLink() {
+    // Specifically target the nav element's Home link
+    const navs = document.querySelectorAll('header nav');
+    for (const nav of navs) {
+      const homeLink = nav.querySelector('a[href$="index.html"]');
+      if (homeLink) return homeLink;
+    }
+    return null;
+  }
+
+  function getNavCollectionLinks() {
+    return document.querySelectorAll('header nav .nav-collection');
+  }
+
+  function setHomeActive(homeLink, active) {
+    if (!homeLink) return;
+    ACTIVE_CLASSES.forEach(function (c) { homeLink.classList.toggle(c, active); });
+    INACTIVE_CLASSES.forEach(function (c) { homeLink.classList.toggle(c, !active); });
+  }
+
+  function setCollectionActive(links, active) {
+    links.forEach(function (link) {
+      link.classList.toggle('is-active', active);
+    });
+  }
+
   function updateActive() {
     const hash = window.location.hash;
-    const homeLinks = document.querySelectorAll('a[href$="index.html"]');
-    const collectionLinks = document.querySelectorAll('.nav-collection');
-    // active = (hash === '#products')
-    const collectionIsActive = (hash === '#products');
+    const onIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+    const collectionIsActive = (hash === '#products') && onIndexPage;
 
-    // Reset all Home links to inactive class
-    homeLinks.forEach(function (link) {
-      // Remove the Home-active classes
-      link.classList.remove(
-        'text-mustard',
-        'underline',
-        'decoration-wavy',
-        'decoration-2',
-        'underline-offset-4'
-      );
-      // Add the inactive (default) class
-      if (!link.classList.contains('hover:text-mustard')) {
-        link.classList.add('hover:text-mustard', 'transition');
-      }
-    });
+    const homeLink = getNavHomeLink();
+    const collectionLinks = getNavCollectionLinks();
 
-    // If Collection is active, set it; otherwise set Home
     if (collectionIsActive) {
-      // Collection is active, Home already reset to inactive above
-      collectionLinks.forEach(function (link) {
-        link.classList.add('is-active');
-        // Add a click listener so clicking it makes Home inactive immediately
-      });
+      setHomeActive(homeLink, false);
+      setCollectionActive(collectionLinks, true);
     } else {
-      // Home should be active
-      homeLinks.forEach(function (link) {
-        link.classList.add(
-          'text-mustard',
-          'underline',
-          'decoration-wavy',
-          'decoration-2',
-          'underline-offset-4'
-        );
-      });
-      collectionLinks.forEach(function (link) {
-        link.classList.remove('is-active');
-      });
+      setHomeActive(homeLink, true);
+      setCollectionActive(collectionLinks, false);
     }
   }
 
-  // Click handlers: when Collection is clicked, prevent Home from staying active
+  // When user clicks the Home nav link, navigate to index.html and reset hash
   document.addEventListener('click', function (e) {
-    const link = e.target.closest('.nav-collection');
+    const link = e.target.closest('header nav a[href$="index.html"]');
     if (link) {
-      // Defer to allow hash change to fire first
-      setTimeout(updateActive, 10);
+      // If we're on the index page, just clear the hash
+      if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+        if (window.location.hash) {
+          e.preventDefault();
+          history.pushState(null, '', 'index.html');
+          updateActive();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
     }
   });
 
   // Update on hash change
   window.addEventListener('hashchange', updateActive);
+  // Update when page becomes visible (back/forward navigation)
+  window.addEventListener('pageshow', updateActive);
+
   // Initial check
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', updateActive);
