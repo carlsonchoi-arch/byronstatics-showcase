@@ -7,9 +7,9 @@ A static product showcase site for ByronStatics retro audio products, deployed t
 | Model | Type | Colors |
 |-------|------|--------|
 | **KBB-228** | Spherical CD Boombox (UFO-style) | Black, Silver, Wood |
-| **KBB-250** | Top-loading CD Boombox (Compact) | White |
+| **KBB-250** | Top-loading CD Boombox (Compact) | Black |
 | **KCS-315** | Portable Cassette Player + AM/FM Recorder | Black, Teal, Pink |
-| **PCD-220** | Portable CD Player (Discman-style) | Pink, Blue, Clear |
+| **PCD-220** | Portable CD Player (Discman-style) | Pink, Teal, Clear |
 | **AM66** | Vintage AM/FM Radio (Rotary) | Black, Cream |
 
 ## Tech Stack
