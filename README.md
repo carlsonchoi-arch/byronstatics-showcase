@@ -4,13 +4,13 @@ A static product showcase site for ByronStatics retro audio products, deployed t
 
 ## Products Featured
 
-| Model | Type | Colors | Price (USD) |
-|-------|------|--------|-------------|
-| **KBB-228** | Spherical CD Boombox (UFO-style) | Black, Silver, Wood | $24.99 |
-| **KBB-250** | Top-loading CD Boombox (Compact) | White | $26.99 |
-| **KCS-315** | Portable Cassette Player + AM/FM Recorder | Black, Teal, Pink | $20.99 |
-| **PCD-220** | Portable CD Player (Discman-style) | Pink, Blue, Clear | $24.99 |
-| **AM66** | Vintage AM/FM Radio (Rotary) | Black, Cream | $19.99 |
+| Model | Type | Colors |
+|-------|------|--------|
+| **KBB-228** | Spherical CD Boombox (UFO-style) | Black, Silver, Wood |
+| **KBB-250** | Top-loading CD Boombox (Compact) | White |
+| **KCS-315** | Portable Cassette Player + AM/FM Recorder | Black, Teal, Pink |
+| **PCD-220** | Portable CD Player (Discman-style) | Pink, Blue, Clear |
+| **AM66** | Vintage AM/FM Radio (Rotary) | Black, Cream |
 
 ## Tech Stack
 
