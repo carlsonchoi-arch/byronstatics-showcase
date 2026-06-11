@@ -1,45 +1,48 @@
-// ByronStatics nav — data-driven active state
-// Each nav link has data-nav="home|collection|story|sayhi"
-// JS determines which is active based on the current page.
+// ByronStatics nav active state
+// Toggles `is-nav-active` class on <a data-nav="..."> inside <header> based on URL.
+// Source of truth: pathname + hash + data-nav attribute (NO inline active class).
+//
+// Active rule:
+//   /, /index, /index.html                        → data-nav="home" (or "collection" if hash === "#products")
+//   /about, /about.html, /about/                  → data-nav="story"
+//   /contact, /contact.html, /contact/            → data-nav="sayhi"
+//   /products/*                                   → no active link
+//
+// Cloudflare Pages serves .html files but URLs can appear without extension; match both.
 
 (function () {
-  'use strict';
-
-  // Style for the active state (mustard + wavy underline, matches original design)
-  const style = document.createElement('style');
-  style.textContent = `
-    .is-nav-active {
-      color: #E9C46A !important; /* mustard */
-      text-decoration: underline !important;
-      text-decoration-style: wavy !important;
-      text-decoration-thickness: 2px !important;
-      text-underline-offset: 4px !important;
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Map pathname → which data-nav value should be active
   function getActiveKey() {
-    const path = window.location.pathname;
-    if (path.endsWith('about.html')) return 'story';
-    if (path.endsWith('contact.html')) return 'sayhi';
-    // index.html or root
-    if (path.endsWith('index.html') || path.endsWith('/') || path === '') {
-      // On index, if hash is #products, Collection is active; otherwise Home
-      if (window.location.hash === '#products') return 'collection';
-      return 'home';
+    var path = window.location.pathname || '/';
+    var hash = window.location.hash;
+
+    // Strip trailing slash for comparison (but keep '/' as is).
+    var normalized = path;
+    if (normalized.length > 1 && normalized.charAt(normalized.length - 1) === '/') {
+      normalized = normalized.slice(0, -1);
     }
-    // products/* or any other path
+
+    // about / The Story  (match /about, /about/, /about.html)
+    if (normalized === '/about' || normalized.indexOf('/about.') !== -1) return 'story';
+
+    // contact / Say Hi  (match /contact, /contact/, /contact.html)
+    if (normalized === '/contact' || normalized.indexOf('/contact.') !== -1) return 'sayhi';
+
+    // home / collection
+    if (normalized === '' || normalized === '/' ||
+        normalized === '/index' || normalized.indexOf('/index.') !== -1) {
+      return hash === '#products' ? 'collection' : 'home';
+    }
+
+    // /products/* → no active
     return null;
   }
 
-  function updateActive() {
-    const activeKey = getActiveKey();
-    // Only operate on links inside the header nav
-    const navLinks = document.querySelectorAll('header nav a[data-nav]');
+  function apply() {
+    var activeKey = getActiveKey();
+    var navLinks = document.querySelectorAll('header nav a[data-nav]');
     navLinks.forEach(function (link) {
-      const key = link.getAttribute('data-nav');
-      if (key === activeKey) {
+      var key = link.getAttribute('data-nav');
+      if (activeKey && key === activeKey) {
         link.classList.add('is-nav-active');
       } else {
         link.classList.remove('is-nav-active');
@@ -47,33 +50,11 @@
     });
   }
 
-  // When user clicks the Home nav link while on index.html with #products hash,
-  // clear the hash so the active state goes from Collection back to Home
-  document.addEventListener('click', function (e) {
-    const link = e.target.closest('header nav a[data-nav]');
-    if (!link) return;
-    const key = link.getAttribute('data-nav');
-    const path = window.location.pathname;
-    const isIndex = path.endsWith('index.html') || path.endsWith('/');
-    
-    if (key === 'home' && isIndex && window.location.hash) {
-      e.preventDefault();
-      history.pushState(null, '', 'index.html');
-      updateActive();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (key === 'collection' && isIndex) {
-      // Let the hash change naturally, then update
-      setTimeout(updateActive, 10);
-    }
-  });
-
-  window.addEventListener('hashchange', updateActive);
-  window.addEventListener('pageshow', updateActive);
-  window.addEventListener('popstate', updateActive);
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateActive);
+    document.addEventListener('DOMContentLoaded', apply);
   } else {
-    updateActive();
+    apply();
   }
+  window.addEventListener('hashchange', apply);
+  window.addEventListener('popstate', apply);
 })();
