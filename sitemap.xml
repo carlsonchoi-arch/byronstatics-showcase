@@ -85,6 +85,43 @@
     </image:image>
   </url>
 
+  <!-- Blog: 70s Audio Revival -->
+  <url>
+    <loc>https://byron-statics.com/blog/70s-audio-revival.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kbb-228/kbb-228-front-hero.jpg</image:loc>
+      <image:title>The 70s Audio Revival — Why Retro Boomboxes Are Back</image:title>
+      <image:caption>KBB-228 spherical CD boombox as the icon of the 2026 retro audio revival</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog: KBB-228 vs KBB-250 -->
+  <url>
+    <loc>https://byron-statics.com/blog/kbb-228-vs-kbb-250.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Portable CD Players Comeback -->
+  <url>
+    <loc>https://byron-statics.com/blog/portable-cd-players-comeback.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Gift Guide -->
+  <url>
+    <loc>https://byron-statics.com/blog/gift-guide-retro-audio.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About page -->
   <url>
     <loc>https://byron-statics.com/about.html</loc>
