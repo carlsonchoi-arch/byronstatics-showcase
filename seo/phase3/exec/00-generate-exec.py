@@ -233,7 +233,7 @@ Open to your ideas on angle or format.
 Thanks for your time,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 https://byron-statics.com
 
 ---
@@ -270,7 +270,7 @@ Either way, love what you do.
 Best,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 
 ---
 
@@ -308,7 +308,7 @@ homeowners.
 Thanks for considering,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 https://byron-statics.com
 
 ---
@@ -351,7 +351,7 @@ look like for the next 4-6 weeks?
 Best,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 
 ---
 
@@ -390,7 +390,7 @@ I can:
 Thanks for considering,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 
 ---
 

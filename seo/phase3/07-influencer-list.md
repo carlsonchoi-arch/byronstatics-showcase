@@ -105,7 +105,7 @@ Either way, keep up the great work.
 Best,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 ```
 
 ---

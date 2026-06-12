@@ -101,7 +101,7 @@ Open to your ideas on angle or format. Best time to call: [phone or schedule lin
 Thanks for your time,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 https://byron-statics.com
 ```
 
@@ -179,7 +179,7 @@ I'll have one out by Friday. We're also open to:
 Thanks for considering,
 Brian
 ByronStatics
-brian@kellproduce.com
+info@thelivingenrichment.com
 ```
 
 ---

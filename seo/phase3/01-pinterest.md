@@ -8,7 +8,7 @@
 
 ### Step 1: Create Pinterest Business account
 - URL: business.pinterest.com
-- Email: marketing@byron-statics.com (or use info@thelivingenrichment.com)
+- Email: info@thelivingenrichment.com (one inbox for all brand comms)
 - Display name: **ByronStatics**
 - Username: @byronstatics
 - Profile photo: ByronStatics logo (Pacifico wordmark, cream color on teal)

@@ -1,18 +1,20 @@
 # ByronStatics Social Media Management System
 
-**Owner:** Brian (Hermes Agent)
-**Carlson's role:** Approve content + flag issues
-**Kelly's role:** Approve + monitor metrics
+**Owner:** Brian (Hermes Agent) — execution + analytics
+**Carlson's role:** Strategic approval + brand alignment
+**Kelly's role:** Learning & shadowing (gradually taking on review responsibilities)
 
 ---
 
 ## 1. Account access
 
 ### Email account for all social profiles
-Use a dedicated email to keep personal and brand separate:
-- **Recommended:** `marketing@byron-statics.com` or `brian@kellproduce.com`
+Use ONE dedicated email to keep personal and brand separate:
+- **Use:** `info@thelivingenrichment.com` (per brand spec — same email used on byron-statics.com footer)
 - Carlson's personal email: only for backup / admin access
 - Kelly's email: cc'd on important updates
+
+This keeps the email count manageable: one inbox for all brand communications.
 
 ### What to give Brian (Hermes) access to
 - ✅ Twitter/X (handle + login)
@@ -442,14 +444,34 @@ If Brian (Hermes) ever needs to hand this off, the new person needs:
 
 ---
 
-## 17. What Kelly can do to help
+## 17. What Kelly can do to help (gradual ramp-up)
 
-- [ ] Approve weekly content calendar
-- [ ] Daily monitoring (5-10 min, just check notifications)
-- [ ] Flag issues early
-- [ ] Coordinate with Brian on product launches / changes
-- [ ] Quarterly business review with Carlson + Brian
+### Phase 1 (Month 1-2): Shadow & learn
+- [ ] Read this doc + 00-QUICK-START.md + 05-social-profile-bios.md
+- [ ] Sit in on weekly content calendar review (read-only, with Carlson)
+- [ ] Review monthly reports with Carlson + Brian
+- [ ] Ask questions, take notes on what works / what doesn't
+- [ ] Learn Buffer / Hootsuite interface (Brian will give walkthrough)
+
+### Phase 2 (Month 3-4): Review with supervision
+- [ ] Take over weekly content calendar review (with Carlson as backup)
+- [ ] First-line comment/DM triage (Brian handles escalations)
+- [ ] Flag any product/brand changes that affect messaging
+- [ ] Draft 1 post/week (Brian edits before publish)
+
+### Phase 3 (Month 5+): Lead with Carlson oversight
+- [ ] Own weekly content review
+- [ ] Co-own monthly reporting
+- [ ] Coordinate with Brian on influencer outreach
+- [ ] Quarterly business review with Carlson
+- [ ] Train next person if Brian (Hermes) ever needs to hand off
+
+### Quick reference for Kelly
+- "What should I do if I see a negative comment?" → Check the 紅旗 vs 黃旗 vs 綠旗 matrix in Section 10
+- "How do I approve a post?" → Buffer draft mode → click Approve
+- "What if a journalist DMs us?" → Forward to Brian (Hermes) IMMEDIATELY. He handles press.
+- "How do I check the schedule?" → Buffer dashboard, 6 channels
 
 ---
 
-**This system runs itself once set up. Brian handles execution, Carlson + Kelly handle 30 min/week of review.**
+**This system runs itself once set up. Brian handles execution day-to-day. Kelly ramps up over 5+ months. Carlson approves strategically.**
