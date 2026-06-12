@@ -16,3 +16,4 @@ backups/
 *.local
 .env
 .env.local
+.seo-backup-*/

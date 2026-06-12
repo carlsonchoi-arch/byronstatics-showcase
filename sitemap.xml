@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://byron-statics.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kbb-228/kbb-228-front-hero.jpg</image:loc>
+      <image:title>ByronStatics KBB-228 Spherical CD Boombox</image:title>
+      <image:caption>Round UFO-style CD boombox with top-load disc, AM/FM stereo, brass buttons</image:caption>
+    </image:image>
+  </url>
+
+  <!-- KBB-228 Spherical CD Boombox -->
+  <url>
+    <loc>https://byron-statics.com/products/kbb-228.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kbb-228/kbb-228-front-control-panel-hero.jpg</image:loc>
+      <image:title>ByronStatics KBB-228 Spherical CD Boombox — front control panel</image:title>
+      <image:caption>UFO-style CD boombox with 6 control buttons, LCD display, dual speakers, top-load CD</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kbb-228/kbb-228-front-cd-lid-open.jpg</image:loc>
+      <image:title>ByronStatics KBB-228 with CD lid open</image:title>
+      <image:caption>Top-loading CD compartment with brass control accents</image:caption>
+    </image:image>
+  </url>
+
+  <!-- KBB-250 CD Boombox -->
+  <url>
+    <loc>https://byron-statics.com/products/kbb-250.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kbb-250/kbb-250-front-hero-shot-powered-on.jpg</image:loc>
+      <image:title>ByronStatics KBB-250 CD Boombox powered on</image:title>
+      <image:caption>Top-load CD boombox with AM/FM stereo, dual 1W speakers, AC/DC power</image:caption>
+    </image:image>
+  </url>
+
+  <!-- KCS-315 Cassette Player -->
+  <url>
+    <loc>https://byron-statics.com/products/kcs-315.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/kcs-315/kcs-315-front-hero-view.jpg</image:loc>
+      <image:title>ByronStatics KCS-315 Portable Cassette Player</image:title>
+      <image:caption>AM/FM cassette recorder with VAS, built-in mic, available in 3 colors</image:caption>
+    </image:image>
+  </url>
+
+  <!-- PCD-220 Portable CD Player -->
+  <url>
+    <loc>https://byron-statics.com/products/pcd-220.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/pcd-220/pcd220-pink-closed-hero.jpg</image:loc>
+      <image:title>ByronStatics PCD-220 Portable CD Player</image:title>
+      <image:caption>Discman-style portable CD player with 60s anti-skip, 5 EQ presets, 3 colors</image:caption>
+    </image:image>
+  </url>
+
+  <!-- AM66 AM/FM Radio -->
+  <url>
+    <loc>https://byron-statics.com/products/am66.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://byron-statics.com/assets/images/am66/am66-cream-front-3q-dial.jpg</image:loc>
+      <image:title>ByronStatics AM66 Vintage AM/FM Radio</image:title>
+      <image:caption>Retro AM/FM radio with rotary dial, 4W output, USB-C charging, 2 colors</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About page -->
+  <url>
+    <loc>https://byron-statics.com/about.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact page -->
+  <url>
+    <loc>https://byron-statics.com/contact.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

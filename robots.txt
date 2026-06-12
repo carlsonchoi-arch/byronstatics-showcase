@@ -1,0 +1,49 @@
+# robots.txt for byron-statics.com
+# Last updated: 2026-06-12
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+Disallow: /previews/
+Disallow: /assets/images/  # Optional: let Google index product images, but exclude raw previews
+
+# Sitemap location
+Sitemap: https://byron-statics.com/sitemap.xml
+
+# Block bad bots that don't respect rate limits
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# AI crawlers — Block training, but allow search indexing (Google-Extended controls this)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
